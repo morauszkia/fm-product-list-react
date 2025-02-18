@@ -1,0 +1,65 @@
+.img-container {
+  position: relative;
+  margin-bottom: 2.375rem;
+}
+
+.img {
+  overflow: hidden;
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
+}
+
+.img img {
+  display: block;
+  height: 100%;
+}
+
+.btn--add {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  background-color: #fff;
+  color: var(--rose-900);
+  border: 1px solid var(--rose-400);
+  border-radius: 100px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.card--text {
+  z-index: 0;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.category {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--rose-500);
+}
+
+.name,
+.price {
+  font-weight: 600;
+}
+
+.name {
+  color: var(--rose-900);
+}
+
+.price {
+  color: var(--red);
+}
