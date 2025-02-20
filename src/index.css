@@ -69,3 +69,9 @@ body {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
