@@ -4,15 +4,20 @@ import CakeImg from "../../assets/images/illustration-empty-cart.svg";
 import TreeImg from "../../assets/images/icon-carbon-neutral.svg";
 
 import classes from "./CartContent.module.css";
+import CartContentList from "../CartContentList/CartContentList";
 
 export default function CartContent({ content }) {
+  const totalSum = content
+    .reduce((sum, item) => sum + item.amount * item.price, 0)
+    .toFixed(2);
+
   return content.length ? (
     <div className={classes.content}>
-      <ul></ul>
+      <CartContentList content={content} />
       <hr />
       <div className={classes.total}>
         <p className={classes["total-text"]}>Order Total</p>
-        <p className={classes["total-sum"]}>$46.50</p>
+        <p className={classes["total-sum"]}>${totalSum}</p>
       </div>
       <div className={classes.delivery}>
         <img src={TreeImg} alt="Green tree" />
