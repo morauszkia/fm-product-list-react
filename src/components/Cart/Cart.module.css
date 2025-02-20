@@ -1,6 +1,7 @@
 .cart {
   background-color: #fff;
   padding: 1.5rem;
+  border-radius: 0.75rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -12,17 +13,6 @@
   color: var(--red);
 }
 
-.content {
-  padding: 1rem;
-  text-align: center;
-}
-
-.img {
-  margin-bottom: 1rem;
-}
-
-.text {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--rose-500);
+hr {
+  border: 1px solid var(--rose-100);
 }
