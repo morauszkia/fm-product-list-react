@@ -30,11 +30,22 @@
   border-radius: 100px;
   cursor: pointer;
 
+  transition: all 0.2s ease-in;
+
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   white-space: nowrap;
+}
+
+.btn--add:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.btn--add:active {
+  transform: translate(-50%, 50%) scale(0.95);
 }
 
 .card--text {
