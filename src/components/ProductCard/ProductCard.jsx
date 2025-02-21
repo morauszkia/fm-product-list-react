@@ -5,11 +5,13 @@ import addToCartImg from "../../assets/images/icon-add-to-cart.svg";
 
 import classes from "./ProductCard.module.css";
 
-export default function ProductCard({ image, name, category, price }) {
+export default function ProductCard({ image, name, category, price, inCart }) {
   return (
     <li>
       <div className={classes["img-container"]}>
-        <picture className={classes.img}>
+        <picture
+          className={`${classes.img} ${inCart ? classes["in-cart"] : ""}`}
+        >
           <source
             media="(min-width: 600px) and (max-width: 799px)"
             srcSet={getImageURL(image.tablet)}
@@ -39,4 +41,5 @@ ProductCard.propTypes = {
   image: propTypes.object.isRequired,
   category: propTypes.string.isRequired,
   price: propTypes.number.isRequired,
+  inCart: propTypes.number,
 };

@@ -15,6 +15,10 @@
   height: 100%;
 }
 
+.in-cart {
+  border: 2px solid var(--red);
+}
+
 .btn--add {
   position: absolute;
   bottom: 0;
