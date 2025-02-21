@@ -1,0 +1,61 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--rose-900);
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-text {
+  font-size: 0.875rem;
+}
+
+.total-sum {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.delivery {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  background-color: var(--rose-50);
+}
+
+.delivery strong {
+  font-weight: 600;
+}
+
+.btn {
+  width: 100%;
+  padding: 1rem 2.5rem;
+  background-color: var(--red);
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+}
+
+.empty {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.img {
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--rose-500);
+}
