@@ -1,38 +1,20 @@
-import { useState } from "react";
+import propTypes from "prop-types";
+
 import CartContent from "../CartContent/CartContent";
 import classes from "./Cart.module.css";
 
-const DUMMY_CART = [
-  {
-    name: "Classic Tiramisu",
-    price: 5.5,
-    amount: 1,
-  },
-  {
-    name: "Vanilla Bean Crème Brûlée",
-    price: 7.0,
-    amount: 4,
-  },
-  {
-    name: "Vanilla Panna Cotta",
-    price: 6.5,
-    amount: 2,
-  },
-];
-
-export default function Cart() {
-  const amountInCart = DUMMY_CART.reduce(
-    (total, next) => total + next.amount,
-    0
-  );
-
-  const [cartAmount, setCartAmount] = useState(amountInCart);
+export default function Cart({ content }) {
+  const amountInCart = content.reduce((total, next) => total + next.amount, 0);
 
   return (
     <section className={classes.cart}>
-      <h2 className={classes.title}>Your Cart ({cartAmount})</h2>
-      <CartContent content={DUMMY_CART} />
+      <h2 className={classes.title}>Your Cart ({amountInCart})</h2>
+      <CartContent content={content} />
       {/* <CartContent content={[]} /> */}
     </section>
   );
 }
+
+Cart.propTypes = {
+  content: propTypes.array.isRequired,
+};
