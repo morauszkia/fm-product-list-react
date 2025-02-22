@@ -1,6 +1,6 @@
 import propTypes from "prop-types";
 
-import RemoveIcon from "../../assets/images/icon-remove-item.svg";
+import removeIcon from "../../assets/images/icon-remove-item.svg";
 
 import classes from "./CartItem.module.css";
 
@@ -16,7 +16,7 @@ export default function CartItem({ name, price, amount }) {
         </p>
       </div>
       <button className={classes.remove}>
-        <img src={RemoveIcon} alt="Remove icon" />
+        <img src={removeIcon} alt="Remove icon" />
       </button>
     </li>
   );

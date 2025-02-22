@@ -1,7 +1,7 @@
 import propTypes from "prop-types";
 
-import CakeImg from "../../assets/images/illustration-empty-cart.svg";
-import TreeImg from "../../assets/images/icon-carbon-neutral.svg";
+import cakeImg from "../../assets/images/illustration-empty-cart.svg";
+import treeImg from "../../assets/images/icon-carbon-neutral.svg";
 
 import classes from "./CartContent.module.css";
 import CartContentList from "../CartContentList/CartContentList";
@@ -20,7 +20,7 @@ export default function CartContent({ content }) {
         <p className={classes["total-sum"]}>${totalSum}</p>
       </div>
       <div className={classes.delivery}>
-        <img src={TreeImg} alt="Green tree" />
+        <img src={treeImg} alt="Green tree" />
         <p>
           This is a <strong>carbon-neutral</strong> delivery
         </p>
@@ -29,7 +29,7 @@ export default function CartContent({ content }) {
     </div>
   ) : (
     <div className={classes.empty}>
-      <img src={CakeImg} alt="Cake" className={classes.img} />
+      <img src={cakeImg} alt="Cake" className={classes.img} />
       <p className={classes.text}>Your added items will appear here</p>
     </div>
   );
