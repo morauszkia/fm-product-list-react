@@ -6,14 +6,14 @@ import treeImg from "../../assets/images/icon-carbon-neutral.svg";
 import classes from "./CartContent.module.css";
 import CartContentList from "../CartContentList/CartContentList";
 
-export default function CartContent({ content }) {
+export default function CartContent({ content, onRemove }) {
   const totalSum = content
     .reduce((sum, item) => sum + item.amount * item.price, 0)
     .toFixed(2);
 
   return content.length ? (
     <div className={classes.content}>
-      <CartContentList content={content} />
+      <CartContentList content={content} onRemove={onRemove} />
       <hr />
       <div className={classes.total}>
         <p className={classes["total-text"]}>Order Total</p>
@@ -37,4 +37,5 @@ export default function CartContent({ content }) {
 
 CartContent.propTypes = {
   content: propTypes.array.isRequired,
+  onRemove: propTypes.func,
 };

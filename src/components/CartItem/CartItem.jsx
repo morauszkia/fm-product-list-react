@@ -4,7 +4,7 @@ import RemoveIcon from "../../assets/images/icon-remove-item.svg?react";
 
 import classes from "./CartItem.module.css";
 
-export default function CartItem({ name, price, amount }) {
+export default function CartItem({ name, price, amount, onRemove }) {
   return (
     <li className={classes.row}>
       <div className={classes.text}>
@@ -15,8 +15,7 @@ export default function CartItem({ name, price, amount }) {
           <span className={classes.total}>${(amount * price).toFixed(2)}</span>
         </p>
       </div>
-      <button className={classes.remove}>
-        {/* <img src={removeIcon} alt="Remove icon" /> */}
+      <button className={classes.remove} onClick={onRemove}>
         <RemoveIcon />
       </button>
     </li>
@@ -27,4 +26,5 @@ CartItem.propTypes = {
   name: propTypes.string.isRequired,
   price: propTypes.number.isRequired,
   amount: propTypes.number.isRequired,
+  onRemove: propTypes.func,
 };
