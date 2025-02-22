@@ -8,6 +8,7 @@
   border-radius: 8px;
   display: block;
   object-fit: cover;
+  border: 2px solid transparent;
 }
 
 .img img {
@@ -16,7 +17,7 @@
 }
 
 .in-cart {
-  border: 2px solid var(--red);
+  border-color: var(--red);
 }
 
 .card--text {
