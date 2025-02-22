@@ -6,7 +6,7 @@ import classes from "./ProductList.module.css";
 
 import dessertsData from "../../data/data.json";
 
-export default function ProductList({ cart, onIncrease }) {
+export default function ProductList({ cart, onIncrease, onDecrease }) {
   const getAmountInCart = (name) =>
     cart.find((item) => item.name === name)?.amount;
 
@@ -20,6 +20,7 @@ export default function ProductList({ cart, onIncrease }) {
             {...dessert}
             inCart={getAmountInCart(dessert.name)}
             onIncrease={onIncrease}
+            onDecrease={onDecrease}
           />
         ))}
       </ul>
@@ -30,4 +31,5 @@ export default function ProductList({ cart, onIncrease }) {
 ProductList.propTypes = {
   cart: propTypes.array.isRequired,
   onIncrease: propTypes.func,
+  onDecrease: propTypes.func,
 };

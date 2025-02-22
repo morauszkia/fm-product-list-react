@@ -12,6 +12,7 @@ export default function ProductCard({
   price,
   inCart,
   onIncrease,
+  onDecrease,
 }) {
   return (
     <li>
@@ -34,6 +35,9 @@ export default function ProductCard({
           onIncrease={() => {
             onIncrease({ name: name, price: price });
           }}
+          onDecrease={() => {
+            onDecrease(name);
+          }}
         />
       </div>
       <div className={classes["card--text"]}>
@@ -52,4 +56,5 @@ ProductCard.propTypes = {
   price: propTypes.number.isRequired,
   inCart: propTypes.number,
   onIncrease: propTypes.func,
+  onDecrease: propTypes.func,
 };

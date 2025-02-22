@@ -35,7 +35,19 @@ function App() {
     }
   };
 
-  const decreaseAmountInCart = (item) => {};
+  const decreaseAmountInCart = (name) => {
+    const currentCartContent = [...cartContent];
+    const itemInCart = currentCartContent.find((i) => i.name === name);
+    if (itemInCart.amount > 1) {
+      itemInCart.amount -= 1;
+      setCartContent(currentCartContent);
+    } else {
+      const updatedCartContent = currentCartContent.filter(
+        (i) => i.name !== name
+      );
+      setCartContent(updatedCartContent);
+    }
+  };
 
   const removeFromCart = (item) => {};
 
