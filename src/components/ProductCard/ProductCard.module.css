@@ -19,39 +19,6 @@
   border: 2px solid var(--red);
 }
 
-.btn--add {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
-
-  font-size: 0.875rem;
-  font-weight: 700;
-  padding: 0.75rem 1.75rem;
-  background-color: #fff;
-  color: var(--rose-900);
-  border: 1px solid var(--rose-400);
-  border-radius: 100px;
-  cursor: pointer;
-
-  transition: all 0.2s ease-in;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-}
-
-.btn--add:hover {
-  color: var(--red);
-  border-color: var(--red);
-}
-
-.btn--add:active {
-  transform: translate(-50%, 50%) scale(0.95);
-}
-
 .card--text {
   z-index: 0;
   font-size: 1rem;

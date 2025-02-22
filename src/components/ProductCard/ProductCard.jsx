@@ -1,9 +1,9 @@
 import propTypes from "prop-types";
 
 import { getImageURL } from "../../util/image-util";
-import addToCartImg from "../../assets/images/icon-add-to-cart.svg";
 
 import classes from "./ProductCard.module.css";
+import AddToCartButton from "../AddToCartButton/AddToCartButton";
 
 export default function ProductCard({ image, name, category, price, inCart }) {
   return (
@@ -22,10 +22,7 @@ export default function ProductCard({ image, name, category, price, inCart }) {
           />
           <img src={getImageURL(image.mobile)} alt="Waffle with Berries" />
         </picture>
-        <button className={classes["btn--add"]}>
-          <img src={addToCartImg} alt="" />
-          Add to Cart
-        </button>
+        <AddToCartButton amountInCart={inCart} />
       </div>
       <div className={classes["card--text"]}>
         <p className={classes.category}>{category}</p>
