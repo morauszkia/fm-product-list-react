@@ -1,13 +1,12 @@
 import propTypes from "prop-types";
 
 import addToCartImg from "../../assets/images/icon-add-to-cart.svg";
-import decrementIcon from "../../assets/images/icon-decrement-quantity.svg";
-import incrementIcon from "../../assets/images/icon-increment-quantity.svg";
+import DecrementIcon from "../../assets/images/icon-decrement-quantity.svg?react";
+import IncrementIcon from "../../assets/images/icon-increment-quantity.svg?react";
 
 import classes from "./AddToCartButton.module.css";
 
 export default function AddToCartButton({ amountInCart }) {
-  console.log(amountInCart);
   return (
     <button
       className={`${classes.btn} ${
@@ -17,11 +16,11 @@ export default function AddToCartButton({ amountInCart }) {
       {amountInCart ? (
         <>
           <div className={classes["change-icon"]}>
-            <img src={decrementIcon} alt="minus" />
+            <DecrementIcon />
           </div>
           {amountInCart}
           <div className={classes["change-icon"]}>
-            <img src={incrementIcon} alt="plus" />
+            <IncrementIcon />
           </div>
         </>
       ) : (

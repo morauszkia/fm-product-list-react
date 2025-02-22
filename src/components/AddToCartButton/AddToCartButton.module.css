@@ -28,6 +28,11 @@
   color: var(--rose-900);
 }
 
+.add:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
 .change {
   background-color: var(--red);
   border-color: var(--red);
@@ -47,9 +52,12 @@
   align-items: center;
 }
 
-.add:hover {
-  color: var(--red);
-  border-color: var(--red);
+.change-icon:hover {
+  background-color: #fff;
+}
+
+.change-icon:hover path {
+  fill: var(--red);
 }
 
 .btn:active {
