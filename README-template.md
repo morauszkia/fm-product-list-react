@@ -76,6 +76,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [vite-plugin-svgr](https://www.npmjs.com/package/vite-plugin-svgr) - This plugin, installed as a dev dependency made it possible to import the svg images as React Components and style them with CSS.
+- [Deployment to Github Pages](https://vite.dev/guide/static-deploy) - Vite docs on the deployment of static pages to Github Pages
 
 ## Author
 
