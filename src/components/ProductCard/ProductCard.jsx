@@ -21,7 +21,7 @@ function ProductCard({
           className={`${classes.img} ${inCart ? classes["in-cart"] : ""}`}
         >
           <source
-            media="(min-width: 750px) and (max-width: 989px)"
+            media="(min-width: 740px) and (max-width: 989px)"
             srcSet={getImageURL(image.tablet)}
           />
           <source
