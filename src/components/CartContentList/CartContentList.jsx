@@ -2,7 +2,7 @@ import propTypes from "prop-types";
 
 import CartItem from "../CartItem/CartItem";
 
-export default function CartContentList({ content, onRemove }) {
+function CartContentList({ content, onRemove }) {
   return (
     <ul>
       {content.map((item) => (
@@ -19,6 +19,14 @@ export default function CartContentList({ content, onRemove }) {
 }
 
 CartContentList.propTypes = {
-  content: propTypes.array.isRequired,
+  content: propTypes.arrayOf([
+    propTypes.shape({
+      name: propTypes.string,
+      price: propTypes.number,
+      amount: propTypes.number,
+    }),
+  ]).isRequired,
   onRemove: propTypes.func,
 };
+
+export default CartContentList;

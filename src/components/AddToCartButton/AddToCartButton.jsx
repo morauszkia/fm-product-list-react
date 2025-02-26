@@ -6,11 +6,7 @@ import IncrementIcon from "../../assets/images/icon-increment-quantity.svg?react
 
 import classes from "./AddToCartButton.module.css";
 
-export default function AddToCartButton({
-  amountInCart,
-  onIncrease,
-  onDecrease,
-}) {
+function AddToCartButton({ amountInCart, onIncrease, onDecrease }) {
   if (amountInCart) {
     return (
       <button className={`${classes.btn} ${classes.change}`}>
@@ -38,3 +34,5 @@ AddToCartButton.propTypes = {
   onIncrease: propTypes.func,
   onDecrease: propTypes.func,
 };
+
+export default AddToCartButton;

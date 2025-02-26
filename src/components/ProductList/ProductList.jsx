@@ -6,7 +6,7 @@ import classes from "./ProductList.module.css";
 
 import dessertsData from "../../data/data.json";
 
-export default function ProductList({ cart, onIncrease, onDecrease }) {
+function ProductList({ cart, onIncrease, onDecrease }) {
   const getAmountInCart = (name) =>
     cart.find((item) => item.name === name)?.amount;
 
@@ -33,3 +33,5 @@ ProductList.propTypes = {
   onIncrease: propTypes.func,
   onDecrease: propTypes.func,
 };
+
+export default ProductList;

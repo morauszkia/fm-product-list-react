@@ -5,7 +5,7 @@ import { getImageURL } from "../../util/image-util";
 import classes from "./ProductCard.module.css";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
 
-export default function ProductCard({
+function ProductCard({
   image,
   name,
   category,
@@ -21,11 +21,11 @@ export default function ProductCard({
           className={`${classes.img} ${inCart ? classes["in-cart"] : ""}`}
         >
           <source
-            media="(min-width: 600px) and (max-width: 799px)"
+            media="(min-width: 750px) and (max-width: 989px)"
             srcSet={getImageURL(image.tablet)}
           />
           <source
-            media="(min-width: 800px)"
+            media="(min-width: 990px)"
             srcSet={getImageURL(image.desktop)}
           />
           <img src={getImageURL(image.mobile)} alt="Waffle with Berries" />
@@ -58,3 +58,5 @@ ProductCard.propTypes = {
   onIncrease: propTypes.func,
   onDecrease: propTypes.func,
 };
+
+export default ProductCard;

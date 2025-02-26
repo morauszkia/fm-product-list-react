@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 import CartContent from "../CartContent/CartContent";
 import classes from "./Cart.module.css";
 
-export default function Cart({ content, onRemove }) {
+function Cart({ content, onRemove }) {
   const amountInCart = content.reduce((total, next) => total + next.amount, 0);
 
   return (
@@ -15,6 +15,14 @@ export default function Cart({ content, onRemove }) {
 }
 
 Cart.propTypes = {
-  content: propTypes.array.isRequired,
+  content: propTypes.arrayOf([
+    propTypes.shape({
+      name: propTypes.string,
+      price: propTypes.number,
+      amount: propTypes.number,
+    }),
+  ]).isRequired,
   onRemove: propTypes.func,
 };
+
+export default Cart;

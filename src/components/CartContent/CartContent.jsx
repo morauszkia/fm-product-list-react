@@ -6,7 +6,7 @@ import treeImg from "../../assets/images/icon-carbon-neutral.svg";
 import classes from "./CartContent.module.css";
 import CartContentList from "../CartContentList/CartContentList";
 
-export default function CartContent({ content, onRemove }) {
+function CartContent({ content, onRemove }) {
   const totalSum = content
     .reduce((sum, item) => sum + item.amount * item.price, 0)
     .toFixed(2);
@@ -36,6 +36,14 @@ export default function CartContent({ content, onRemove }) {
 }
 
 CartContent.propTypes = {
-  content: propTypes.array.isRequired,
+  content: propTypes.arrayOf([
+    propTypes.shape({
+      name: propTypes.string,
+      price: propTypes.number,
+      amount: propTypes.number,
+    }),
+  ]).isRequired,
   onRemove: propTypes.func,
 };
+
+export default CartContent;
