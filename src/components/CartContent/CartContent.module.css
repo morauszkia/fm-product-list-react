@@ -34,28 +34,6 @@
   font-weight: 600;
 }
 
-.btn {
-  width: 100%;
-  padding: 1rem 2.5rem;
-  background-color: var(--red);
-  font: inherit;
-  font-weight: 600;
-  color: #fff;
-  border: none;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: all 0.3 ease-in;
-}
-
-.btn:hover {
-  background-color: hsl(14, 86%, 30%); /* FALLBACK */
-  background-color: color-mix(in hsl, var(--red), rgba(0, 0, 0) 20%);
-}
-
-.btn:active {
-  transform: scale(0.95);
-}
-
 .empty {
   padding: 1rem 0;
   text-align: center;

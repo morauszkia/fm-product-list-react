@@ -5,6 +5,7 @@ import treeImg from "../../assets/images/icon-carbon-neutral.svg";
 
 import classes from "./CartContent.module.css";
 import CartContentList from "../CartContentList/CartContentList";
+import Button from "../Button/Button";
 
 function CartContent({ content, onRemove }) {
   const totalSum = content
@@ -25,7 +26,7 @@ function CartContent({ content, onRemove }) {
           This is a <strong>carbon-neutral</strong> delivery
         </p>
       </div>
-      <button className={classes.btn}>Confirm Order</button>
+      <Button className={classes.btn}>Confirm Order</Button>
     </div>
   ) : (
     <div className={classes.empty}>
