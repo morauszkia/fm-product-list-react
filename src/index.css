@@ -80,6 +80,9 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
+  body {
+    padding: 5.5rem;
+  }
   #root {
     flex-direction: row;
   }
