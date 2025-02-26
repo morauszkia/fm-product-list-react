@@ -10,13 +10,12 @@
   grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
   column-gap: 1.5rem;
   row-gap: 1.5rem;
-  flex-grow: 1;
 }
 
 @media screen and (min-width: 740px) {
   .grid {
+    max-width: 60rem;
     grid-template-columns: repeat(3, 1fr);
-    max-width: 50rem;
     row-gap: 2rem;
   }
 }

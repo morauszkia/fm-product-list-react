@@ -74,16 +74,18 @@ body {
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
 }
 
 @media screen and (min-width: 1200px) {
   body {
-    padding: 5.5rem;
+    padding: min(5vw, 5.5rem) 3rem;
   }
   #root {
-    flex-direction: row;
+    max-width: 76rem;
+    grid-template-columns: 25fr 12fr;
+    column-gap: 1.5rem;
   }
 }
