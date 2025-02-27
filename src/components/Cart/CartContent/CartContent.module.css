@@ -5,6 +5,10 @@
   color: var(--rose-900);
 }
 
+hr {
+  border: 1px solid var(--rose-100);
+}
+
 .total {
   display: flex;
   justify-content: space-between;
