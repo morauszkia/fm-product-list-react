@@ -11,7 +11,7 @@ import ConfirmationModal from "@/components/Confirmation/ConfirmationModal/Confi
 
 import classes from "./CartContent.module.css";
 
-function CartContent({ content, onRemove }) {
+function CartContent({ content, onRemove, onConfirm }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const totalSum = content
@@ -20,6 +20,7 @@ function CartContent({ content, onRemove }) {
 
   const startNewOrder = () => {
     setModalOpen(false);
+    onConfirm();
   };
 
   return content.length ? (
@@ -39,15 +40,15 @@ function CartContent({ content, onRemove }) {
       <Button className={classes.btn} onClick={() => setModalOpen(true)}>
         Confirm Order
       </Button>
-      {modalOpen &&
-        createPortal(
-          <ConfirmationModal
-            cart={content}
-            total={totalSum}
-            onButtonClick={startNewOrder}
-          />,
-          document.getElementById("modal")
-        )}
+      {createPortal(
+        <ConfirmationModal
+          cart={content}
+          total={totalSum}
+          onButtonClick={startNewOrder}
+          open={modalOpen}
+        />,
+        document.getElementById("modal")
+      )}
     </div>
   ) : (
     <div className={classes.empty}>
@@ -66,6 +67,7 @@ CartContent.propTypes = {
     }),
   ]).isRequired,
   onRemove: propTypes.func,
+  onConfirm: propTypes.func,
 };
 
 export default CartContent;

@@ -35,6 +35,10 @@ function App() {
     setCartContent(updatedCartContent);
   };
 
+  const emptyCart = () => {
+    setCartContent([]);
+  };
+
   return (
     <>
       <ProductList
@@ -42,7 +46,11 @@ function App() {
         onIncrease={increaseAmountInCart}
         onDecrease={decreaseAmountInCart}
       />
-      <Cart content={cartContent} onRemove={removeFromCart} />
+      <Cart
+        content={cartContent}
+        onRemove={removeFromCart}
+        onConfirm={emptyCart}
+      />
     </>
   );
 }
