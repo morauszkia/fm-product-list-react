@@ -6,7 +6,7 @@ import confirmIcon from "@/assets/images/icon-order-confirmed.svg";
 import classes from "./ConfirmationModal.module.css";
 import ConfirmationModalContent from "../ConfirmationModalContent/ConfirmationModalContent";
 
-function ConfirmationModal({ cart, onButtonClick }) {
+function ConfirmationModal({ cart, total, onButtonClick }) {
   return (
     <>
       <div className={classes.backdrop}></div>
@@ -20,7 +20,7 @@ function ConfirmationModal({ cart, onButtonClick }) {
           <h2 className={classes.title}>Order Confirmed</h2>
           <p className={classes.text}>We hope you enjoy your food</p>
         </header>
-        <ConfirmationModalContent cart={cart} />
+        <ConfirmationModalContent cart={cart} total={total} />
         <Button onClick={onButtonClick}>Start New Order</Button>
       </dialog>
     </>
@@ -29,6 +29,7 @@ function ConfirmationModal({ cart, onButtonClick }) {
 
 ConfirmationModal.propTypes = {
   cart: propTypes.arrayOf(propTypes.object),
+  total: propTypes.string,
   onButtonClick: propTypes.func,
 };
 

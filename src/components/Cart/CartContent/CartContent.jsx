@@ -41,7 +41,11 @@ function CartContent({ content, onRemove }) {
       </Button>
       {modalOpen &&
         createPortal(
-          <ConfirmationModal cart={content} onButtonClick={startNewOrder} />,
+          <ConfirmationModal
+            cart={content}
+            total={totalSum}
+            onButtonClick={startNewOrder}
+          />,
           document.getElementById("modal")
         )}
     </div>

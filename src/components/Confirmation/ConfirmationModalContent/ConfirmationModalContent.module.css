@@ -8,6 +8,11 @@
   color: var(--rose-900);
 }
 
+.list {
+  max-height: 35vh;
+  overflow-y: scroll;
+}
+
 hr {
   border: 1px solid var(--rose-100);
 }
