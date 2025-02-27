@@ -33,7 +33,11 @@ function ProductCard({
         <AddToCartButton
           amountInCart={inCart}
           onIncrease={() => {
-            onIncrease({ name: name, price: price });
+            onIncrease({
+              name: name,
+              price: price,
+              thumbnail: image.thumbnail,
+            });
           }}
           onDecrease={() => {
             onDecrease(name);
