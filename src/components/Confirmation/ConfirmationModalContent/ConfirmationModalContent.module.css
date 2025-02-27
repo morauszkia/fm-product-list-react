@@ -6,11 +6,15 @@
   flex-direction: column;
   gap: 1.5rem;
   color: var(--rose-900);
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.05) transparent;
 }
 
-.list {
-  max-height: 35vh;
-  overflow-y: scroll;
+@media screen and (min-width: 489px) {
+  .content {
+    max-height: 40vh;
+  }
 }
 
 hr {

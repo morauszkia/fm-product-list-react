@@ -6,7 +6,7 @@ import ConfirmationModalListItem from "../ConfirmationModalListItem/Confirmation
 function ConfirmationModalContent({ cart, total }) {
   return (
     <section className={classes.content}>
-      <ul className={classes.list}>
+      <ul>
         {cart.map((item) => (
           <ConfirmationModalListItem key={item.name} {...item} />
         ))}
