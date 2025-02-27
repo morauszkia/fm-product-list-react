@@ -6,11 +6,11 @@ import confirmIcon from "@/assets/images/icon-order-confirmed.svg";
 import classes from "./ConfirmationModal.module.css";
 import ConfirmationModalContent from "../ConfirmationModalContent/ConfirmationModalContent";
 
-function ConfirmationModal({ cart, total, onButtonClick }) {
+function ConfirmationModal({ cart, total, onButtonClick, open }) {
   return (
     <>
-      <div className={classes.backdrop}></div>
-      <dialog className={classes.modal}>
+      {open && <div className={classes.backdrop} />}
+      <dialog className={`${classes.modal} ${open ? classes.open : ""}`}>
         <header>
           <img
             src={confirmIcon}
@@ -31,6 +31,7 @@ ConfirmationModal.propTypes = {
   cart: propTypes.arrayOf(propTypes.object),
   total: propTypes.string,
   onButtonClick: propTypes.func,
+  open: propTypes.bool,
 };
 
 export default ConfirmationModal;

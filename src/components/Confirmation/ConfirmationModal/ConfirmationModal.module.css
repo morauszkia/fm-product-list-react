@@ -9,6 +9,8 @@
 }
 
 .modal {
+  --initial-transform: translateY(100%);
+  --final-transform: translateY(0);
   position: fixed;
   z-index: 100;
   bottom: 0;
@@ -19,10 +21,18 @@
   border: none;
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
+  transform-origin: center;
 
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  transform: var(--initial-transform);
+  transition: all 0.3s ease-in;
+}
+
+.modal.open {
+  transform: var(--final-transform);
 }
 
 .checkmark {
@@ -43,12 +53,14 @@
 
 @media screen and (min-width: 489px) {
   .modal {
-    top: 50vh;
+    --initial-transform: translate(-50%, -50%) scale(0);
+    --final-transform: translate(-50%, -50%) scale(1);
+    top: 50dvh;
     left: 50vw;
-    transform: translate(-50%, -50%);
     width: min(calc(100vw - 5rem), 50rem);
     padding: 2.5rem;
     border-radius: 0.75rem;
+    transition: all 0.3s ease-in;
   }
 }
 
