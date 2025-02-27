@@ -1,13 +1,14 @@
 import propTypes from "prop-types";
 
 import classes from "./ConfirmationModalContent.module.css";
+import ConfirmationModalListItem from "../ConfirmationModalListItem/ConfirmationModalListItem";
 
 function ConfirmationModalContent({ cart }) {
   return (
     <section className={classes.content}>
       <ul>
         {cart.map((item) => (
-          <li key={item.name}>{item.name}</li>
+          <ConfirmationModalListItem key={item.name} {...item} />
         ))}
       </ul>
       <hr />
