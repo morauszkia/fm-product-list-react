@@ -79,6 +79,12 @@ body {
   gap: 2rem;
 }
 
+@media screen and (min-width: 472px) {
+  body {
+    padding: 2.5rem;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   #root {
     flex-direction: row;

@@ -1,0 +1,59 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  padding: 2.5rem 1.5rem 1.5rem;
+  background-color: #fff;
+  border: none;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.checkmark {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  color: var(--rose-900);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.text {
+  color: var(--rose-500);
+}
+
+@media screen and (min-width: 489px) {
+  .modal {
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: min(calc(100vw - 5rem), 50rem);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .modal {
+    width: 37rem;
+  }
+}
