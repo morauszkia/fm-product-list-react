@@ -10,9 +10,10 @@ function ConfirmationModalContent({ cart }) {
           <li key={item.name}>{item.name}</li>
         ))}
       </ul>
-      <div>
+      <hr />
+      <div className={classes.total}>
         <p>Order Total</p>
-        <p>$46.50</p>
+        <p className={classes.sum}>$46.50</p>
       </div>
     </section>
   );

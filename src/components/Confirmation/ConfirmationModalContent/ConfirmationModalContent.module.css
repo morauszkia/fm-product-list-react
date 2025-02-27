@@ -1,3 +1,24 @@
 .content {
   background-color: var(--rose-50);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--rose-900);
+}
+
+hr {
+  border: 1px solid var(--rose-100);
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.sum {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
