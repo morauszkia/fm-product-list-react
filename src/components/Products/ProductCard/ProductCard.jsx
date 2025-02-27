@@ -1,9 +1,9 @@
 import propTypes from "prop-types";
 
-import { getImageURL } from "../../../util/image-util";
+import { getImageURL } from "@/util/image-util";
 
 import classes from "./ProductCard.module.css";
-import AddToCartButton from "../AddToCartButton/AddToCartButton";
+import AddToCartButton from "@/components/Products/AddToCartButton/AddToCartButton";
 
 function ProductCard({
   image,

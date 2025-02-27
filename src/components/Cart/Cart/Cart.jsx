@@ -1,6 +1,6 @@
 import propTypes from "prop-types";
 
-import CartContent from "../CartContent/CartContent";
+import CartContent from "@/components/Cart/CartContent/CartContent";
 import classes from "./Cart.module.css";
 
 function Cart({ content, onRemove }) {

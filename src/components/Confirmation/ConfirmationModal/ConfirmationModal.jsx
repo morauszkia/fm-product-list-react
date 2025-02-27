@@ -1,7 +1,7 @@
 import propTypes from "prop-types";
 
-import Button from "../../Button/Button";
-import confirmIcon from "../../../assets/images/icon-order-confirmed.svg";
+import Button from "@/components/Button/Button";
+import confirmIcon from "@/assets/images/icon-order-confirmed.svg";
 
 import classes from "./ConfirmationModal.module.css";
 
