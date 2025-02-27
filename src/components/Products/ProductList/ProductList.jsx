@@ -4,7 +4,7 @@ import ProductCard from "../ProductCard/ProductCard";
 
 import classes from "./ProductList.module.css";
 
-import dessertsData from "../../data/data.json";
+import dessertsData from "../../../data/data.json";
 
 function ProductList({ cart, onIncrease, onDecrease }) {
   const getAmountInCart = (name) =>

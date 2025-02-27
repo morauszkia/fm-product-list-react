@@ -1,6 +1,6 @@
 import propTypes from "prop-types";
 
-import RemoveIcon from "../../assets/images/icon-remove-item.svg?react";
+import RemoveIcon from "../../../assets/images/icon-remove-item.svg?react";
 
 import classes from "./CartItem.module.css";
 

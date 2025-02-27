@@ -2,12 +2,12 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import propTypes from "prop-types";
 
-import cakeImg from "../../assets/images/illustration-empty-cart.svg";
-import treeImg from "../../assets/images/icon-carbon-neutral.svg";
+import cakeImg from "../../../assets/images/illustration-empty-cart.svg";
+import treeImg from "../../../assets/images/icon-carbon-neutral.svg";
 
 import CartContentList from "../CartContentList/CartContentList";
-import Button from "../Button/Button";
-import ConfirmationModal from "../ConfirmationModal/ConfirmationModal";
+import Button from "../../Button/Button";
+import ConfirmationModal from "../../Confirmation/ConfirmationModal/ConfirmationModal";
 
 import classes from "./CartContent.module.css";
 
