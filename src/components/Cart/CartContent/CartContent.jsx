@@ -20,7 +20,7 @@ function CartContent({ content, onRemove, onConfirm }) {
 
   const startNewOrder = () => {
     setModalOpen(false);
-    onConfirm();
+    setTimeout(() => onConfirm(), 300);
   };
 
   return content.length ? (
