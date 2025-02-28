@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cart from "@/components/Cart/Cart/Cart";
 import ProductList from "@/components/Products/ProductList/ProductList";
 
 function App() {
-  const [cartContent, setCartContent] = useState([]);
+  const [cartContent, setCartContent] = useState(() => {
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    return cart || [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartContent));
+  }, [cartContent]);
 
   const increaseAmountInCart = (item) => {
     const currentCartContent = [...cartContent];
