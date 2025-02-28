@@ -1,0 +1,77 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  --initial-transform: translateY(100%);
+  --final-transform: translateY(0);
+  --initial-opacity: 1;
+  --final-opacity: 1;
+  position: fixed;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  padding: 2.5rem 1.5rem 1.5rem;
+  background-color: #fff;
+  border: none;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  transform: var(--initial-transform);
+  opacity: var(--initial-opacity);
+  transform-origin: center;
+  transition: all 0.3s ease-in;
+}
+
+.modal.open {
+  transform: var(--final-transform);
+  opacity: var(--final-opacity);
+  z-index: 100;
+}
+
+.checkmark {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  color: var(--rose-900);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.text {
+  color: var(--rose-500);
+}
+
+@media screen and (min-width: 489px) {
+  .modal {
+    --initial-transform: translate(-50%, -50%) scale(0.8);
+    --final-transform: translate(-50%, -50%) scale(1);
+    --initial-opacity: 0;
+    --final-opacity: 1;
+    top: 50dvh;
+    left: 50vw;
+    width: min(calc(100vw - 5rem), 50rem);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .modal {
+    width: 37rem;
+  }
+}

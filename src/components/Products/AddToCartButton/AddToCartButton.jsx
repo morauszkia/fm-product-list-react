@@ -1,8 +1,8 @@
 import propTypes from "prop-types";
 
-import addToCartImg from "../../assets/images/icon-add-to-cart.svg";
-import DecrementIcon from "../../assets/images/icon-decrement-quantity.svg?react";
-import IncrementIcon from "../../assets/images/icon-increment-quantity.svg?react";
+import addToCartImg from "@/assets/images/icon-add-to-cart.svg";
+import DecrementIcon from "@/assets/images/icon-decrement-quantity.svg?react";
+import IncrementIcon from "@/assets/images/icon-increment-quantity.svg?react";
 
 import classes from "./AddToCartButton.module.css";
 

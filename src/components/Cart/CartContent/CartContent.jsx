@@ -1,15 +1,27 @@
+import { useState } from "react";
+import { createPortal } from "react-dom";
 import propTypes from "prop-types";
 
-import cakeImg from "../../assets/images/illustration-empty-cart.svg";
-import treeImg from "../../assets/images/icon-carbon-neutral.svg";
+import cakeImg from "@/assets/images/illustration-empty-cart.svg";
+import treeImg from "@/assets/images/icon-carbon-neutral.svg";
+
+import CartContentList from "@/components/Cart/CartContentList/CartContentList";
+import Button from "@/components/Button/Button";
+import ConfirmationModal from "@/components/Confirmation/ConfirmationModal/ConfirmationModal";
 
 import classes from "./CartContent.module.css";
-import CartContentList from "../CartContentList/CartContentList";
 
-function CartContent({ content, onRemove }) {
+function CartContent({ content, onRemove, onConfirm }) {
+  const [modalOpen, setModalOpen] = useState(false);
+
   const totalSum = content
     .reduce((sum, item) => sum + item.amount * item.price, 0)
     .toFixed(2);
+
+  const startNewOrder = () => {
+    setModalOpen(false);
+    setTimeout(() => onConfirm(), 300);
+  };
 
   return content.length ? (
     <div className={classes.content}>
@@ -25,7 +37,18 @@ function CartContent({ content, onRemove }) {
           This is a <strong>carbon-neutral</strong> delivery
         </p>
       </div>
-      <button className={classes.btn}>Confirm Order</button>
+      <Button className={classes.btn} onClick={() => setModalOpen(true)}>
+        Confirm Order
+      </Button>
+      {createPortal(
+        <ConfirmationModal
+          cart={content}
+          total={totalSum}
+          onButtonClick={startNewOrder}
+          open={modalOpen}
+        />,
+        document.getElementById("modal")
+      )}
     </div>
   ) : (
     <div className={classes.empty}>
@@ -44,6 +67,7 @@ CartContent.propTypes = {
     }),
   ]).isRequired,
   onRemove: propTypes.func,
+  onConfirm: propTypes.func,
 };
 
 export default CartContent;

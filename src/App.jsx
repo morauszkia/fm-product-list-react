@@ -1,7 +1,6 @@
 import { useState } from "react";
-import "./App.css";
-import Cart from "./components/Cart/Cart";
-import ProductList from "./components/ProductList/ProductList";
+import Cart from "@/components/Cart/Cart/Cart";
+import ProductList from "@/components/Products/ProductList/ProductList";
 
 function App() {
   const [cartContent, setCartContent] = useState([]);
@@ -36,6 +35,10 @@ function App() {
     setCartContent(updatedCartContent);
   };
 
+  const emptyCart = () => {
+    setCartContent([]);
+  };
+
   return (
     <>
       <ProductList
@@ -43,7 +46,11 @@ function App() {
         onIncrease={increaseAmountInCart}
         onDecrease={decreaseAmountInCart}
       />
-      <Cart content={cartContent} onRemove={removeFromCart} />
+      <Cart
+        content={cartContent}
+        onRemove={removeFromCart}
+        onConfirm={emptyCart}
+      />
     </>
   );
 }
