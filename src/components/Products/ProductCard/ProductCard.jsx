@@ -4,7 +4,7 @@ import propTypes from "prop-types";
 import { getImageURL } from "@/util/image-util";
 
 import AddToCartButton from "@/components/Products/AddToCartButton/AddToCartButton";
-import CartContext from "@/context/CartContext";
+import CartContext from "@/context/cart-context";
 
 import classes from "./ProductCard.module.css";
 

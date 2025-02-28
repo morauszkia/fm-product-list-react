@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import cakeImg from "@/assets/images/illustration-empty-cart.svg";
 import treeImg from "@/assets/images/icon-carbon-neutral.svg";
 
-import CartContext from "@/context/CartContext";
+import CartContext from "@/context/cart-context";
 import CartContentList from "@/components/Cart/CartContentList/CartContentList";
 import Button from "@/components/Button/Button";
 import ConfirmationModal from "@/components/Confirmation/ConfirmationModal/ConfirmationModal";

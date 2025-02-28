@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import CartContext from "@/context/CartContext";
+import CartContext from "@/context/cart-context";
 import ConfirmationModalListItem from "../ConfirmationModalListItem/ConfirmationModalListItem";
 
 import classes from "./ConfirmationModalContent.module.css";

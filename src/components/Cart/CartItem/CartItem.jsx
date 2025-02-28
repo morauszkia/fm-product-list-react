@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import propTypes from "prop-types";
 
-import CartContext from "@/context/CartContext";
+import CartContext from "@/context/cart-context";
 import RemoveIcon from "@/assets/images/icon-remove-item.svg?react";
 
 import classes from "./CartItem.module.css";

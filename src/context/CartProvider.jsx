@@ -1,4 +1,4 @@
-import CartContext from "./cartContext";
+import CartContext from "./cart-context";
 
 import { useEffect, useState } from "react";
 import propTypes from "prop-types";

@@ -1,7 +1,7 @@
 import CartContent from "@/components/Cart/CartContent/CartContent";
 import classes from "./Cart.module.css";
 import { useContext } from "react";
-import CartContext from "@/context/CartContext";
+import CartContext from "@/context/cart-context";
 
 function Cart() {
   const { cartContent } = useContext(CartContext);
