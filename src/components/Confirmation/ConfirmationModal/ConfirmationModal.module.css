@@ -11,8 +11,10 @@
 .modal {
   --initial-transform: translateY(100%);
   --final-transform: translateY(0);
+  --initial-opacity: 1;
+  --final-opacity: 1;
   position: fixed;
-  z-index: 100;
+  z-index: -1;
   bottom: 0;
   left: 0;
   width: 100vw;
@@ -21,18 +23,21 @@
   border: none;
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
-  transform-origin: center;
 
   display: flex;
   flex-direction: column;
   gap: 2rem;
 
   transform: var(--initial-transform);
+  opacity: var(--initial-opacity);
+  transform-origin: center;
   transition: all 0.3s ease-in;
 }
 
 .modal.open {
   transform: var(--final-transform);
+  opacity: var(--final-opacity);
+  z-index: 100;
 }
 
 .checkmark {
@@ -53,14 +58,15 @@
 
 @media screen and (min-width: 489px) {
   .modal {
-    --initial-transform: translate(-50%, -50%) scale(0);
+    --initial-transform: translate(-50%, -50%) scale(0.8);
     --final-transform: translate(-50%, -50%) scale(1);
+    --initial-opacity: 0;
+    --final-opacity: 1;
     top: 50dvh;
     left: 50vw;
     width: min(calc(100vw - 5rem), 50rem);
     padding: 2.5rem;
     border-radius: 0.75rem;
-    transition: all 0.3s ease-in;
   }
 }
 
