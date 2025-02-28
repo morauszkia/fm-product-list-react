@@ -1,32 +1,18 @@
-import propTypes from "prop-types";
+import { useContext } from "react";
 
+import CartContext from "@/context/CartContext";
 import CartItem from "@/components/Cart/CartItem/CartItem";
 
-function CartContentList({ content, onRemove }) {
+function CartContentList() {
+  const { cartContent } = useContext(CartContext);
+
   return (
     <ul>
-      {content.map((item) => (
-        <CartItem
-          key={item.name}
-          {...item}
-          onRemove={() => {
-            onRemove(item.name);
-          }}
-        />
+      {cartContent.map((item) => (
+        <CartItem key={item.name} {...item} />
       ))}
     </ul>
   );
 }
-
-CartContentList.propTypes = {
-  content: propTypes.arrayOf([
-    propTypes.shape({
-      name: propTypes.string,
-      price: propTypes.number,
-      amount: propTypes.number,
-    }),
-  ]).isRequired,
-  onRemove: propTypes.func,
-};
 
 export default CartContentList;

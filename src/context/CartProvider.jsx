@@ -1,6 +1,6 @@
 import CartContext from "./CartContext";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import propTypes from "prop-types";
 
 function CartProvider({ children }) {
@@ -8,6 +8,14 @@ function CartProvider({ children }) {
     const cart = JSON.parse(localStorage.getItem("cart"));
     return cart || [];
   });
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartContent));
+  }, [cartContent]);
+
+  const totalSum = cartContent
+    .reduce((sum, item) => sum + item.amount * item.price, 0)
+    .toFixed(2);
 
   const increaseAmountInCart = (item) => {
     const currentCartContent = [...cartContent];
@@ -18,6 +26,7 @@ function CartProvider({ children }) {
     } else {
       setCartContent([...cartContent, { ...item, amount: 1 }]);
     }
+    localStorage.setItem("cart", JSON.stringify(cartContent));
   };
 
   const decreaseAmountInCart = (name) => {
@@ -45,6 +54,7 @@ function CartProvider({ children }) {
 
   const value = {
     cartContent,
+    totalSum,
     increaseAmountInCart,
     decreaseAmountInCart,
     removeFromCart,

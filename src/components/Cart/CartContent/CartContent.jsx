@@ -1,31 +1,29 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { createPortal } from "react-dom";
-import propTypes from "prop-types";
 
 import cakeImg from "@/assets/images/illustration-empty-cart.svg";
 import treeImg from "@/assets/images/icon-carbon-neutral.svg";
 
+import CartContext from "@/context/CartContext";
 import CartContentList from "@/components/Cart/CartContentList/CartContentList";
 import Button from "@/components/Button/Button";
 import ConfirmationModal from "@/components/Confirmation/ConfirmationModal/ConfirmationModal";
 
 import classes from "./CartContent.module.css";
 
-function CartContent({ content, onRemove, onConfirm }) {
+function CartContent() {
   const [modalOpen, setModalOpen] = useState(false);
 
-  const totalSum = content
-    .reduce((sum, item) => sum + item.amount * item.price, 0)
-    .toFixed(2);
+  const { cartContent, totalSum, emptyCart } = useContext(CartContext);
 
   const startNewOrder = () => {
     setModalOpen(false);
-    setTimeout(() => onConfirm(), 300);
+    setTimeout(() => emptyCart(), 300);
   };
 
-  return content.length ? (
+  return cartContent.length ? (
     <div className={classes.content}>
-      <CartContentList content={content} onRemove={onRemove} />
+      <CartContentList />
       <hr />
       <div className={classes.total}>
         <p className={classes["total-text"]}>Order Total</p>
@@ -42,7 +40,6 @@ function CartContent({ content, onRemove, onConfirm }) {
       </Button>
       {createPortal(
         <ConfirmationModal
-          cart={content}
           total={totalSum}
           onButtonClick={startNewOrder}
           open={modalOpen}
@@ -57,17 +54,5 @@ function CartContent({ content, onRemove, onConfirm }) {
     </div>
   );
 }
-
-CartContent.propTypes = {
-  content: propTypes.arrayOf([
-    propTypes.shape({
-      name: propTypes.string,
-      price: propTypes.number,
-      amount: propTypes.number,
-    }),
-  ]).isRequired,
-  onRemove: propTypes.func,
-  onConfirm: propTypes.func,
-};
 
 export default CartContent;

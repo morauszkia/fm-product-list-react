@@ -1,24 +1,29 @@
+import { useContext } from "react";
 import propTypes from "prop-types";
 
 import { getImageURL } from "@/util/image-util";
 
-import classes from "./ProductCard.module.css";
 import AddToCartButton from "@/components/Products/AddToCartButton/AddToCartButton";
+import CartContext from "@/context/CartContext";
 
-function ProductCard({
-  image,
-  name,
-  category,
-  price,
-  inCart,
-  onIncrease,
-  onDecrease,
-}) {
+import classes from "./ProductCard.module.css";
+
+function ProductCard({ image, name, category, price }) {
+  const { cartContent, increaseAmountInCart, decreaseAmountInCart } =
+    useContext(CartContext);
+
+  const getAmountInCart = () => {
+    const itemInCart = cartContent.find((item) => item.name === name);
+    return itemInCart?.amount;
+  };
+
+  const amount = getAmountInCart();
+
   return (
     <li>
       <div className={classes["img-container"]}>
         <picture
-          className={`${classes.img} ${inCart ? classes["in-cart"] : ""}`}
+          className={`${classes.img} ${amount ? classes["in-cart"] : ""}`}
         >
           <source
             media="(min-width: 740px) and (max-width: 989px)"
@@ -31,16 +36,16 @@ function ProductCard({
           <img src={getImageURL(image.mobile)} alt="Waffle with Berries" />
         </picture>
         <AddToCartButton
-          amountInCart={inCart}
+          amountInCart={amount}
           onIncrease={() => {
-            onIncrease({
+            increaseAmountInCart({
               name: name,
               price: price,
               thumbnail: image.thumbnail,
             });
           }}
           onDecrease={() => {
-            onDecrease(name);
+            decreaseAmountInCart(name);
           }}
         />
       </div>
@@ -58,9 +63,6 @@ ProductCard.propTypes = {
   image: propTypes.object.isRequired,
   category: propTypes.string.isRequired,
   price: propTypes.number.isRequired,
-  inCart: propTypes.number,
-  onIncrease: propTypes.func,
-  onDecrease: propTypes.func,
 };
 
 export default ProductCard;

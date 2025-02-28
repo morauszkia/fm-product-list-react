@@ -1,28 +1,27 @@
-import propTypes from "prop-types";
+import { useContext } from "react";
 
-import classes from "./ConfirmationModalContent.module.css";
+import CartContext from "@/context/CartContext";
 import ConfirmationModalListItem from "../ConfirmationModalListItem/ConfirmationModalListItem";
 
-function ConfirmationModalContent({ cart, total }) {
+import classes from "./ConfirmationModalContent.module.css";
+
+function ConfirmationModalContent() {
+  const { cartContent, totalSum } = useContext(CartContext);
+
   return (
     <section className={classes.content}>
       <ul>
-        {cart.map((item) => (
+        {cartContent.map((item) => (
           <ConfirmationModalListItem key={item.name} {...item} />
         ))}
       </ul>
       <hr />
       <div className={classes.total}>
         <p>Order Total</p>
-        <p className={classes.sum}>${total}</p>
+        <p className={classes.sum}>${totalSum}</p>
       </div>
     </section>
   );
 }
-
-ConfirmationModalContent.propTypes = {
-  cart: propTypes.arrayOf(propTypes.object),
-  total: propTypes.string,
-};
 
 export default ConfirmationModalContent;
